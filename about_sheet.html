@@ -1,70 +1,140 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About - Personal League Tracker</title>
+/*
+    Personal League Tracker - About Page
 
-    <!-- Stylesheet for the About page -->
-    <link rel="stylesheet" href="external_stylesheet.css">
+    This page uses the same CSS-variable theme system as the Stats page.
+    The alternate theme is activated by the "alternate-theme" body class.
+*/
 
-    <!-- Vanilla JavaScript used to switch and remember the selected theme -->
-    <script src="theme.js" defer></script>
-</head>
-<body>
+/* Default dark theme variables */
+:root {
+    --body-bg: #0b1f33;
+    --surface-bg: #12395b;
+    --nav-bg: #c89b3c;
+    --heading-color: #c89b3c;
+    --text-color: #f0e6d2;
+    --bright-text: #ffffff;
+    --nav-text: #0b1f33;
+    --border-color: #c89b3c;
+    --link-color: #f0e6d2;
+    --shadow-color: rgba(0, 0, 0, 0.30);
+}
 
-    <!-- Header section of the website, contains title and subtitle -->
-    <header>
-        <h1>Personal League Tracker</h1>
-        <p class="subtitle">Personal League of Legends Stats Tracker.</p>
-    </header>
+/* Alternate light-blue theme variables */
+body.alternate-theme {
+    --body-bg: #eef5fb;
+    --surface-bg: #ffffff;
+    --nav-bg: #4a90c2;
+    --heading-color: #174f78;
+    --text-color: #17324a;
+    --bright-text: #17324a;
+    --nav-text: #ffffff;
+    --border-color: #7bb7df;
+    --link-color: #174f78;
+    --shadow-color: rgba(20, 55, 80, 0.18);
+}
 
-    <!-- Navigation links and theme button -->
-    <nav>
-        <a href="../LoL_stat_website/index.html">Stats</a>
-        <a href="./about_sheet.html">About</a>
+/* Styles the whole page */
+body {
+    background-color: var(--body-bg);
+    color: var(--text-color);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    transition: background-color 0.25s ease, color 0.25s ease;
+}
 
-        <!-- JavaScript uses this button to switch between color themes -->
-        <button id="theme_toggler" type="button">Switch Theme</button>
-    </nav>
+/* Styles the header */
+header {
+    background-color: var(--surface-bg);
+    text-align: center;
+    padding: 20px;
+}
 
-    <!-- Main content of the About page -->
-    <main>
-        <!-- Explains purpose of website and motivation behind it -->
-        <section class="about_sec">
-            <h2>Information about my League of Legends stat tracker.</h2>
-            <p>
-                I decided to create a personal League tracker because I enjoy the game, but also because I feel that everything you do in life can be a lesson, even if it is a video game. You are constantly learning while playing League of Legends, whether it is improving your mechanics, decision-making, or other aspects that you may not always notice right away. I wanted to create something related to the game that I could also use personally, so this website will track my own statistics. League of Legends has many champions, ranks, mechanics, and different statistics connected to the game, so I thought it would be fun to create something that I could look at after each game to see how I performed and how I am improving over time.
-            </p>
-            <p>
-                This website will primarily act as a personal stat tracking page. I want to be able to keep track of information such as my rank, most played champions, win rate, kills, deaths, assists, and most importantly recent matches or a way to store matches and their records permanently. Having these will make it easier for me to see how I am performing and what areas I could watch for.
-            </p>
-            <p>
-                I was motivated to create this because it is a passion of mine as well as a way for me to see my weak areas, which is especially important for a competitive game like League of Legends. Being able to look back at these things can help someone improve, and the tracker will be tailored to me rather than the overall player base.
-            </p>
-        </section>
+/* Styles the main title */
+header h1 {
+    color: var(--heading-color);
+}
 
-        <!-- Statistics the website will be tracking -->
-        <section class="tracker_section">
-            <h2>These are the things that are going to be tracked</h2>
-            <ul>
-                <li>Current rank</li>
-                <li>Most played champion</li>
-                <li>Win rate</li>
-                <li>KDA ratio</li>
-                <li>Recent matches</li>
-                <li>Champion mastery</li>
-            </ul>
-        </section>
+/* Styles the subtitle */
+.subtitle {
+    color: var(--bright-text);
+}
 
-        <!-- Instagram link -->
-        <section class="social_section">
-            <h2>Social Media</h2>
-            <a href="https://www.instagram.com/d.chun_yu.b/?hl=en" target="_blank" rel="noopener noreferrer">My Instagram</a>
-        </section>
-    </main>
+/* Styles the nav section */
+nav {
+    background-color: var(--nav-bg);
+    text-align: center;
+    padding: 10px;
+}
 
-    <!-- Footer that states the website description -->
-    <footer><p>My League Tracker - Personal League of Legends Statistics</p></footer>
-</body>
-</html>
+/* Styles the nav links */
+nav a {
+    color: var(--nav-text);
+    margin: 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Styles the theme switch button */
+#theme_toggler {
+    background-color: var(--surface-bg);
+    color: var(--text-color);
+    border: 2px solid var(--nav-text);
+    border-radius: 6px;
+    padding: 7px 12px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#theme_toggler:hover {
+    opacity: 0.85;
+}
+
+/* Styles the main content area */
+main {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+}
+
+/* Styles headings */
+h2 {
+    color: var(--heading-color);
+}
+
+/* Reusable themed sections */
+.about_sec,
+.tracker_section,
+.social_section {
+    background-color: var(--surface-bg);
+    border: 2px solid var(--border-color);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px var(--shadow-color);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+/* Styles paragraphs in About section */
+.about_sec p {
+    color: var(--text-color);
+    line-height: 1.5;
+}
+
+/* Styles list items */
+.tracker_section li {
+    color: var(--bright-text);
+    margin: 5px;
+}
+
+/* Styles social media link */
+.social_section a {
+    color: var(--link-color);
+    font-weight: bold;
+}
+
+/* Styles footer */
+footer {
+    text-align: center;
+    color: var(--text-color);
+    margin-top: 20px;
+    padding: 20px;
+}
