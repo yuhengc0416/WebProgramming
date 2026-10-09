@@ -1,51 +1,94 @@
 /*
-League-inspired Color Palette
+    Personal League Tracker - Stats Page
 
-Dark Blue: #0b1f33
-Blue: #12395b
-Gold: #c89b3c
-Light Gold: #f0e6d2
-White: #ffffff
-Win Blue: #214f78
-Loss Red: #6b2b2b
+    Theme system:
+    The default variables create the original dark League-inspired theme.
+    Adding the "alternate-theme" class to <body> changes only the variables,
+    which lets the same CSS rules display a different color theme.
 */
+
+/* Default dark theme variables */
+:root {
+    --body-bg: #0b1f33;
+    --surface-bg: #12395b;
+    --nav-bg: #c89b3c;
+    --heading-color: #c89b3c;
+    --text-color: #f0e6d2;
+    --bright-text: #ffffff;
+    --nav-text: #0b1f33;
+    --border-color: #c89b3c;
+    --win-bg: #214f78;
+    --loss-bg: #6b2b2b;
+    --shadow-color: rgba(0, 0, 0, 0.35);
+}
+
+/* Alternate light-blue theme variables */
+body.alternate-theme {
+    --body-bg: #eef5fb;
+    --surface-bg: #ffffff;
+    --nav-bg: #4a90c2;
+    --heading-color: #174f78;
+    --text-color: #17324a;
+    --bright-text: #17324a;
+    --nav-text: #ffffff;
+    --border-color: #7bb7df;
+    --win-bg: #d9f2e3;
+    --loss-bg: #f6dada;
+    --shadow-color: rgba(20, 55, 80, 0.18);
+}
 
 /* Whole page */
 body {
     margin: 0;
-    background-color: #0b1f33;
-    color: #f0e6d2;
+    background-color: var(--body-bg);
+    color: var(--text-color);
     font-family: Arial, sans-serif;
+    transition: background-color 0.25s ease, color 0.25s ease;
 }
 
 /* Header */
 .top_header {
-    background-color: #12395b;
+    background-color: var(--surface-bg);
     text-align: center;
     padding: 20px;
 }
 
 .top_header h1 {
-    color: #c89b3c;
+    color: var(--heading-color);
     margin-bottom: 5px;
 }
 
 .subtitle {
-    color: #ffffff;
+    color: var(--bright-text);
 }
 
 /* Navigation */
 .top_nav {
-    background-color: #c89b3c;
+    background-color: var(--nav-bg);
     text-align: center;
     padding: 10px;
 }
 
 .top_nav a {
-    color: #0b1f33;
+    color: var(--nav-text);
     margin: 0 15px;
     text-decoration: none;
     font-weight: bold;
+}
+
+/* Theme button */
+#theme_toggler {
+    background-color: var(--surface-bg);
+    color: var(--text-color);
+    border: 2px solid var(--nav-text);
+    border-radius: 6px;
+    padding: 7px 12px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#theme_toggler:hover {
+    opacity: 0.85;
 }
 
 /* Main layout */
@@ -69,22 +112,22 @@ body {
 
 /* Reusable box style */
 .card {
-    background-color: #12395b;
-    border: 3px solid #c89b3c;
+    background-color: var(--surface-bg);
+    border: 3px solid var(--border-color);
     border-radius: 10px;
     padding: 20px;
     margin-bottom: 25px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
+    box-shadow: 0 4px 10px var(--shadow-color);
 }
 
 .card h2 {
-    color: #c89b3c;
+    color: var(--heading-color);
     margin-top: 0;
 }
 
 /* Player profile box */
 .profile_card p {
-    border-bottom: 1px solid #f0e6d2;
+    border-bottom: 1px solid var(--text-color);
     padding-bottom: 8px;
 }
 
@@ -93,7 +136,7 @@ body {
     display: flex;
     justify-content: space-between;
     padding: 12px 0;
-    border-bottom: 1px solid #f0e6d2;
+    border-bottom: 1px solid var(--text-color);
 }
 
 /* Match history area */
@@ -107,25 +150,37 @@ body {
     justify-content: space-between;
     padding: 18px;
     margin-top: 12px;
-    color: #ffffff;
+    color: var(--bright-text);
     border-radius: 8px;
-    border: 1px solid #c89b3c;
+    border: 1px solid var(--border-color);
 }
 
 /* Winning match */
 .win {
-    background-color: #214f78;
+    background-color: var(--win-bg);
 }
 
 /* Losing match */
 .loss {
-    background-color: #6b2b2b;
+    background-color: var(--loss-bg);
 }
 
 /* Footer */
 footer {
     text-align: center;
-    color: #f0e6d2;
+    color: var(--text-color);
     padding: 20px;
     margin-top: 20px;
+}
+
+/* Small-screen layout */
+@media (max-width: 800px) {
+    .page_layout {
+        flex-direction: column;
+    }
+
+    .left_column,
+    .right_column {
+        width: 100%;
+    }
 }
