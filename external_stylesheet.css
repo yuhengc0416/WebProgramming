@@ -1,50 +1,92 @@
 /*
-Colors:
-Dark Blue: #0b1f33
-Blue: #12395b
-Gold: #c89b3c
-Light Gold: #f0e6d2
-White: #ffffff
+    Personal League Tracker - About Page
+
+    This page uses the same CSS-variable theme system as the Stats page.
+    The alternate theme is activated by the "alternate-theme" body class.
 */
+
+/* Default dark theme variables */
+:root {
+    --body-bg: #0b1f33;
+    --surface-bg: #12395b;
+    --nav-bg: #c89b3c;
+    --heading-color: #c89b3c;
+    --text-color: #f0e6d2;
+    --bright-text: #ffffff;
+    --nav-text: #0b1f33;
+    --border-color: #c89b3c;
+    --link-color: #f0e6d2;
+    --shadow-color: rgba(0, 0, 0, 0.30);
+}
+
+/* Alternate light-blue theme variables */
+body.alternate-theme {
+    --body-bg: #eef5fb;
+    --surface-bg: #ffffff;
+    --nav-bg: #4a90c2;
+    --heading-color: #174f78;
+    --text-color: #17324a;
+    --bright-text: #17324a;
+    --nav-text: #ffffff;
+    --border-color: #7bb7df;
+    --link-color: #174f78;
+    --shadow-color: rgba(20, 55, 80, 0.18);
+}
 
 /* Styles the whole page */
 body {
-    background-color: #0b1f33;
-    color: #f0e6d2;
+    background-color: var(--body-bg);
+    color: var(--text-color);
     font-family: Arial, sans-serif;
     margin: 0;
+    transition: background-color 0.25s ease, color 0.25s ease;
 }
 
 /* Styles the header */
 header {
-    background-color: #12395b;
+    background-color: var(--surface-bg);
     text-align: center;
     padding: 20px;
 }
 
 /* Styles the main title */
 header h1 {
-    color: #c89b3c;
+    color: var(--heading-color);
 }
 
 /* Styles the subtitle */
 .subtitle {
-    color: #ffffff;
+    color: var(--bright-text);
 }
 
 /* Styles the nav section */
 nav {
-    background-color: #c89b3c;
+    background-color: var(--nav-bg);
     text-align: center;
     padding: 10px;
 }
 
 /* Styles the nav links */
 nav a {
-    color: #0b1f33;
+    color: var(--nav-text);
     margin: 15px;
     text-decoration: none;
     font-weight: bold;
+}
+
+/* Styles the theme switch button */
+#theme_toggler {
+    background-color: var(--surface-bg);
+    color: var(--text-color);
+    border: 2px solid var(--nav-text);
+    border-radius: 6px;
+    padding: 7px 12px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#theme_toggler:hover {
+    opacity: 0.85;
 }
 
 /* Styles the main content area */
@@ -54,39 +96,45 @@ main {
     padding: 20px;
 }
 
-/* Styles the headings */
+/* Styles headings */
 h2 {
-    color: #c89b3c;
+    color: var(--heading-color);
 }
 
-/* Styles the about section */
-.about_sec {
-    background-color: #12395b;
+/* Reusable themed sections */
+.about_sec,
+.tracker_section,
+.social_section {
+    background-color: var(--surface-bg);
+    border: 2px solid var(--border-color);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px var(--shadow-color);
     padding: 20px;
     margin-bottom: 20px;
 }
 
-/* Styles the paragraphs in about section */
+/* Styles paragraphs in About section */
 .about_sec p {
-    color: #f0e6d2;
+    color: var(--text-color);
     line-height: 1.5;
 }
 
-/* Styles the tracker section */
-.tracker_section {
-    background-color: #12395b;
-    padding: 20px;
-}
-
-/* Styles the list */
+/* Styles list items */
 .tracker_section li {
-    color: #ffffff;
+    color: var(--bright-text);
     margin: 5px;
 }
 
-/* Styles the footer */
+/* Styles social media link */
+.social_section a {
+    color: var(--link-color);
+    font-weight: bold;
+}
+
+/* Styles footer */
 footer {
     text-align: center;
-    color: #f0e6d2;
+    color: var(--text-color);
     margin-top: 20px;
+    padding: 20px;
 }
