@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Title displayed in the browser tab -->
+    <title>Login - Personal League Tracker</title>
+
+    <!-- External CSS for styling the login page -->
+    <link rel="stylesheet" href="auth.css">
+</head>
+<body>
+
+    <!-- Main container for the login form -->
+    <main class="auth-card">
+        <h1>Login</h1>
+
+        <!-- Sends username and password to the /login endpoint -->
+        <form action="/login" method="POST">
+
+            <!-- Username input field -->
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required>
+
+            <!-- Password input field, hides the entered characters -->
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+
+            <!-- Submits the login information to the server -->
+            <button type="submit">Login</button>
+        </form>
+
+        <!-- Link to registration page for new users -->
+        <p>Need an account? <a href="register.html">Register here</a></p>
+    </main>
+
+</body>
+</html>

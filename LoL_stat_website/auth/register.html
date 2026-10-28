@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Title displayed in the browser tab -->
+    <title>Register - Personal League Tracker</title>
+
+    <!-- External CSS for styling the registration page -->
+    <link rel="stylesheet" href="auth.css">
+</head>
+<body>
+
+    <!-- Main container for the registration form -->
+    <main class="auth-card">
+        <h1>Create Account</h1>
+
+        <!-- Sends user information to the /register endpoint -->
+        <form action="/register" method="POST">
+
+            <!-- Username input field -->
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required>
+
+            <!-- Email input field, checks for valid email format -->
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" required>
+
+            <!-- Password input field, hides entered characters -->
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+
+            <!-- Submits registration information to the server -->
+            <button type="submit">Register</button>
+        </form>
+
+        <!-- Link to login page for existing users -->
+        <p>Already have an account? <a href="login.html">Login here</a></p>
+    </main>
+
+</body>
+</html>

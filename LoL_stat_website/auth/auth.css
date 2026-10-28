@@ -1,0 +1,82 @@
+
+/*
+    Personal League Tracker - Login and Registration Pages
+    This stylesheet is used to style both login.html and register.html.
+*/
+
+/* Default color variables for the dark League-inspired theme */
+:root {
+    --body-bg: #0b1f33;
+    --surface-bg: #12395b;
+    --heading-color: #c89b3c;
+    --text-color: #f0e6d2;
+    --border-color: #c89b3c;
+    --button-text: #0b1f33;
+}
+
+/* Styles the entire page and centers the form */
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--body-bg);
+    color: var(--text-color);
+    font-family: Arial, sans-serif;
+}
+
+/* Main container for the login and registration forms */
+.auth-card {
+    width: min(420px, 85%);
+    background-color: var(--surface-bg);
+    border: 3px solid var(--border-color);
+    border-radius: 10px;
+    padding: 28px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
+}
+
+/* Styles the Login and Create Account headings */
+h1 {
+    margin-top: 0;
+    color: var(--heading-color);
+    text-align: center;
+}
+
+/* Arranges form elements vertically with spacing */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Styles the username, email, and password input fields */
+input {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+/* Styles the Login and Register submit buttons */
+button {
+    background-color: var(--heading-color);
+    color: var(--button-text);
+    border: none;
+    border-radius: 6px;
+    padding: 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Changes button appearance when the mouse hovers over it */
+button:hover {
+    opacity: 0.9;
+}
+
+/* Styles links between the login and registration pages */
+a {
+    color: var(--heading-color);
+    font-weight: bold;
+}
