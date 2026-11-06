@@ -1,0 +1,15 @@
+# Protect database credentials and session secret
+.env
+.env.*
+
+# Database certificate
+ca.pem
+
+# Node.js dependencies
+node_modules/
+
+# macOS system files
+.DS_Store
+
+# Log files
+*.log
