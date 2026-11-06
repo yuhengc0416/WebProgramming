@@ -8,7 +8,7 @@
     <!-- Main stylesheet for the stats page -->
     <link rel="stylesheet" href="style_sheet.css">
 
-    <!-- Vanilla JavaScript used to switch and remember the selected theme -->
+    <!-- JavaScript used to switch and remember the selected theme -->
     <script src="theme.js" defer></script>
 </head>
 <body>
@@ -19,13 +19,26 @@
         <p class="subtitle">Personal League of Legends Stats Tracker</p>
     </header>
 
-    <!-- Navigation and theme control -->
+    <!-- Navigation links and theme control -->
     <nav class="top_nav">
+
+        <!-- Link to the main statistics page -->
         <a href="./index.html">Stats</a>
+
+        <!-- Link to the About page -->
         <a href="about_sheet.html">About</a>
 
-        <!-- JavaScript uses this button to switch between the two themes -->
-        <button id="theme_toggler" type="button">Switch Theme</button>
+        <!-- NEW: Opens the profile page to display the
+             username stored in the login session -->
+        <a href="/profile">Profile</a>
+
+        <!-- NEW: Logs out the user and destroys the session -->
+        <a href="/logout">Logout</a>
+
+        <!-- Button used to switch between the two themes -->
+        <button id="theme_toggler" type="button">
+            Switch Theme
+        </button>
     </nav>
 
     <!-- Main two-column layout -->
@@ -37,6 +50,7 @@
             <!-- Player profile and rank box -->
             <section class="card profile_card">
                 <h2>Player Profile</h2>
+
                 <p><b>Summoner Name:</b> Player Name</p>
                 <p><b>Level:</b> 000</p>
                 <p><b>Current Rank:</b> Gold IV</p>
@@ -49,44 +63,91 @@
             <!-- Top champion box -->
             <section class="card champions_card">
                 <h2>Top Champions</h2>
-                <div class="champion_row"><span>Champion 1</span><span>Mastery</span></div>
-                <div class="champion_row"><span>Champion 2</span><span>Mastery</span></div>
-                <div class="champion_row"><span>Champion 3</span><span>Mastery</span></div>
+
+                <!-- Champion names and mastery placeholders -->
+                <div class="champion_row">
+                    <span>Champion 1</span>
+                    <span>Mastery</span>
+                </div>
+
+                <div class="champion_row">
+                    <span>Champion 2</span>
+                    <span>Mastery</span>
+                </div>
+
+                <div class="champion_row">
+                    <span>Champion 3</span>
+                    <span>Mastery</span>
+                </div>
             </section>
         </aside>
 
         <!-- Right column -->
         <main class="right_column">
+
             <!-- Match history box -->
             <section class="card match_history">
                 <h2>Match History</h2>
 
                 <!-- Example winning match -->
                 <div class="match win">
-                    <div><strong>Victory</strong><p>Champion Name</p></div>
-                    <div><p>KDA: 10 / 3 / 8</p><p>Ranked Solo</p></div>
+                    <div>
+                        <strong>Victory</strong>
+                        <p>Champion Name</p>
+                    </div>
+
+                    <div>
+                        <p>KDA: 10 / 3 / 8</p>
+                        <p>Ranked Solo</p>
+                    </div>
                 </div>
 
                 <!-- Example losing match -->
                 <div class="match loss">
-                    <div><strong>Defeat</strong><p>Champion Name</p></div>
-                    <div><p>KDA: 4 / 8 / 6</p><p>Ranked Solo</p></div>
+                    <div>
+                        <strong>Defeat</strong>
+                        <p>Champion Name</p>
+                    </div>
+
+                    <div>
+                        <p>KDA: 4 / 8 / 6</p>
+                        <p>Ranked Solo</p>
+                    </div>
                 </div>
 
+                <!-- Example winning match -->
                 <div class="match win">
-                    <div><strong>Victory</strong><p>Champion Name</p></div>
-                    <div><p>KDA: 7 / 2 / 11</p><p>Ranked Solo</p></div>
+                    <div>
+                        <strong>Victory</strong>
+                        <p>Champion Name</p>
+                    </div>
+
+                    <div>
+                        <p>KDA: 7 / 2 / 11</p>
+                        <p>Ranked Solo</p>
+                    </div>
                 </div>
 
+                <!-- Example losing match -->
                 <div class="match loss">
-                    <div><strong>Defeat</strong><p>Champion Name</p></div>
-                    <div><p>KDA: 2 / 6 / 5</p><p>Ranked Solo</p></div>
+                    <div>
+                        <strong>Defeat</strong>
+                        <p>Champion Name</p>
+                    </div>
+
+                    <div>
+                        <p>KDA: 2 / 6 / 5</p>
+                        <p>Ranked Solo</p>
+                    </div>
                 </div>
             </section>
         </main>
     </div>
 
     <!-- Footer -->
-    <footer><p>Personal League Tracker</p></footer>
+    <footer>
+        <p>Personal League Tracker</p>
+    </footer>
+
 </body>
 </html>
